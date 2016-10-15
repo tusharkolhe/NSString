@@ -116,8 +116,39 @@ int main(int argc, const char * argv[]) {
         float asFloat = [strAge floatValue];
         double asDouble = [strAge doubleValue];
 
+      ////NSMUTABLE STRING
+        
+        NSMutableString *profile=[NSMutableString stringWithFormat:@"Jr. iOS Developer"];
         
         
+        
+        [profile setString:@"Sr. iOS Developer"];
+         NSLog(@"Mutable String:%@",profile);
+        
+    ////Expanding Mutable String
+        NSMutableString *Exp = [NSMutableString stringWithCapacity:20];
+       
+        [Exp setString:@" 1yr"];
+        [profile appendString:Exp];
+        NSLog(@"%@",profile);
+        
+        //Append with format:--This is used to seperate the frist string if there will be characters and digits in it
+        
+//        [profile appendFormat:@" %@", Exp];
+//        NSLog(@"%@", profile);
+        
+       //Insert into String
+        
+        [profile insertString:@"/swift" atIndex:7];
+        NSLog(@"%@", profile);
+        
+    ////Replace or Deleting String
+        
+        [profile replaceCharactersInRange:NSMakeRange(7, 16) withString:@" Consultant"];
+        NSLog(@"%@",profile);
+        
+        [profile deleteCharactersInRange:NSMakeRange(19, 3)];
+        NSLog(@"%@",profile);
     }
     return 0;
 }
